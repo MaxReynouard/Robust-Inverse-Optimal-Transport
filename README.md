@@ -14,4 +14,6 @@ This implementation has also been improved to strengthen the convergence.
 - There also is a test of the speed of those algorithms. They seem to have comparable speeds
 
 ## In Synthetic_dataset.ipynb :
-- There is 
+- There is a generator for the synthetic data, similar to what is explained in Ruilin Li's paper 
+- There is an exemple of the use of riot on those data,
+- And there is a quick noise sensibility study, to test the robustness of the convergence
