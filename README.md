@@ -6,8 +6,8 @@ This implementation has also been improved to strengthen the convergence.
 
 ## In riot.py : 
 - You'll find implementations of the Sinkhorn-Knopp algorithm to solve the Regularized Optimal Transport (ROT) problem, 
-- You'll also find its log-stabilized version. This version prevents overflow issues that were present in Ruilin Li's version of the algorithm. 
-- Finally, you'll find the RIOT algorithm. In addition to some simplification, you'll find the replacement of the use of standard Sinkhorn-knopp algorithm by its log-stabilisation version, this leads to further simplifications. And you'll also find a stabilisation of the inner loop. This stabilisation makes the algorithm extremely more robust
+- You'll also find its log-stabilized version. This version prevents overflow issues that were present in Ruilin Li's version of the algorithm. It is an usual amelioration to the original algorithm
+- Finally, you'll find the RIOT algorithm. In addition to some simplification, you'll find the replacement of the use of standard Sinkhorn-knopp algorithm by its log-stabilisation version, this leads to further simplifications of the initial algorithm. And you'll also find a stabilisation of the inner loop. This stabilisation makes the algorithm extremely more robust and is a personnal contribution that I haven't found elsewhere in litterature (but I am not sure of how to look for this) 
 
 ## In Sinkhorn_vs_log_stabilized_sinkhorn.ipynb :
 - There is a comparison of the results we get from both approaches, this aims to check that we converge to similar solutions
