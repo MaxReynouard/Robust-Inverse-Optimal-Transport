@@ -131,7 +131,7 @@ def poly_kernel (U, V, gamma, c0, d, A):
 
 def RIOT(Pi_hat, C_u, C_v, C_of_A, Delta_of_A,
          lambda0, lambda_u,lambda_v, delta , s,
-         outer_iter, inner_iter, UV_features = None, A = None,
+         outer_iter, inner_iter, UV_features = None, A_init = None,
           Pi_real = None) :
     r""" Robust Inverse Optimal Transport
 
@@ -175,13 +175,15 @@ def RIOT(Pi_hat, C_u, C_v, C_of_A, Delta_of_A,
         if c : print(f'exited outer loop because of of the constraint is more than {tol} : {c1, c2, c3}')
         return c
 
-    if A is None :
+    if A_init is None :
         if UV_features is None :
             print('we need at list UV_features or A in RIOT call')
             return
         else :
             u_feat,v_feat = [UV_features]*2 if type(UV_features)==int else UV_features
             A = np.random.rand(u_feat,v_feat)
+    else :
+        A = A_init.copy()
 
     C = C_of_A(A)
     mu_hat, nu_hat = Pi_hat.sum(1)[:,None], Pi_hat.sum(0)[:,None]
